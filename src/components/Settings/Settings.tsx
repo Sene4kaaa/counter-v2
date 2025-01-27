@@ -15,12 +15,12 @@ type SettingsPropsType = {
 const Settings = (props: SettingsPropsType) => {
 
     const onChangeHandlerMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
-        const newMaxValue = Number(e.currentTarget.value)
+        const newMaxValue = +e.currentTarget.value
         props.setMaxValue(newMaxValue)
     }
 
     const onChangeHandlerStartValue = (e: ChangeEvent<HTMLInputElement>) => {
-        const newStartValue = Number(e.currentTarget.value)
+        const newStartValue = +e.currentTarget.value
         props.setStartValue(newStartValue)
     }
 
