@@ -4,6 +4,7 @@ type CountPropsType = {
     count: number
     setCount: (count: number) => void;
     maxValue: number
+    removeButton: () => void
 }
 
 const Count = (props: CountPropsType) => {
@@ -13,13 +14,13 @@ const Count = (props: CountPropsType) => {
     }
 
     const onClickRemoveButton = () => {
-        props.setCount(0)
+        props.removeButton()
     }
 
     return (
         <div>
             <>
-                {props.count <= props.maxValue ? props.count : 'MAX VALUE'}
+                {props.count <= props.maxValue ? props.count : <div>Incorrect Value</div>}
                 <Button name={'+'} callback={onClickPlusButton}/>
                 <Button name={'Remove'} callback={onClickRemoveButton}/>
             </>

@@ -1,10 +1,15 @@
 import {ChangeEvent} from "react";
+import Button from "../Button/Button.tsx";
+
 
 type SettingsPropsType = {
     maxValue: number
     startValue: number
     setMaxValue: (value: number) => void
     setStartValue: (value: number) => void
+    settings: boolean
+    setSettings: (settings: boolean) => void
+    setCount: (count: number) => void
 }
 
 const Settings = (props: SettingsPropsType) => {
@@ -19,6 +24,12 @@ const Settings = (props: SettingsPropsType) => {
         props.setStartValue(newStartValue)
     }
 
+    const onClickSettingsOff = () => {
+        props.setCount(props.startValue)
+        props.setSettings(!props.settings)
+
+    }
+
     return (
         <>
             <div>
@@ -31,6 +42,7 @@ const Settings = (props: SettingsPropsType) => {
                                     value={props.startValue}
                                     onChange={onChangeHandlerStartValue}/>
             </div>
+            <Button name={"Accept"} callback={onClickSettingsOff}/>
         </>
     )
         ;
