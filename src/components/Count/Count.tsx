@@ -18,7 +18,7 @@ const Count = (props: CountPropsType) => {
 
     return (
         <div>
-            { props.maxValue> props.count ? 'MaxValue': props.count}
+            { props.count <= props.maxValue ? props.count: 'MaxValue'}
             <Button name={'+'} callback={onClickPlusButton}/>
             <Button name={'Remove'} callback={onClickRemoveButton}/>
         </div>
