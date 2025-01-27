@@ -8,6 +8,7 @@ function App() {
     const [count, setCount] = useState(0);
     const [settings, setSettings] = useState(false)
     const [maxValue, setMaxValue] = useState<number>(100)
+    const [minValue, setMinValue] = useState<number>(-100)
     const [startValue, setStartValue] = useState<number>(0)
 
 
@@ -18,6 +19,7 @@ function App() {
     const removeButton = () => {
         setCount(0)
         setMaxValue(100)
+        setMinValue(-100)
         setStartValue(0)
     }
 
@@ -27,8 +29,10 @@ function App() {
                 settings ? <Settings
                         maxValue={maxValue}
                         startValue={startValue}
+                        minValue={minValue}
                         setMaxValue={setMaxValue}
                         setStartValue={setStartValue}
+                        setMinValue={setMinValue}
                         settings={settings}
                         setSettings={setSettings}
                         setCount={setCount}
@@ -40,6 +44,7 @@ function App() {
                             count={count}
                             setCount={setCount}
                             maxValue={maxValue}
+                            minValue={minValue}
                             removeButton={removeButton}
                         />
                         <Button name={'Settings'} callback={onClickSettingsOn}/>
