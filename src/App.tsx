@@ -24,7 +24,7 @@ function App() {
     }
 
     return (
-        <>
+        <div className={'Count'}>
             {
                 settings ? <Settings
                         maxValue={maxValue}
@@ -39,7 +39,7 @@ function App() {
 
                     />
                     :
-                    <>
+                    <div>
                         <Count
                             count={count}
                             setCount={setCount}
@@ -48,9 +48,9 @@ function App() {
                             removeButton={removeButton}
                         />
                         <Button name={'Settings'} callback={onClickSettingsOn}/>
-                    </>
+                    </div>
             }
-        </>
+        </div>
     )
 }
 

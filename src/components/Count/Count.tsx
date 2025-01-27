@@ -24,13 +24,11 @@ const Count = (props: CountPropsType) => {
 
     return (
         <div>
-            <>
-                {props.count <= props.maxValue && props.count >= props.minValue ? props.count :
-                    <div>Incorrect Value</div>}
-                <Button name={'+'} callback={onClickPlusButton} disabled={props.count > props.maxValue}/>
-                <Button name={'-'} callback={onClickMinusButton} disabled={props.count < props.minValue}/>
-                <Button name={'Remove'} callback={onClickRemoveButton}/>
-            </>
+            {props.count <= props.maxValue && props.count >= props.minValue ? props.count :
+                <div>Incorrect Value</div>}
+            <Button name={'+'} callback={onClickPlusButton} disabled={props.count > props.maxValue}/>
+            <Button name={'-'} callback={onClickMinusButton} disabled={props.count < props.minValue}/>
+            <Button name={'Remove'} callback={onClickRemoveButton}/>
         </div>
     );
 };
