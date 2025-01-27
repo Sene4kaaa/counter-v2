@@ -1,26 +1,28 @@
 import Button from "../Button/Button.tsx";
 
 type CountPropsType = {
-    count: number
-    setCount: (count: number) => void
+    startValue: number
+    setStartValue: (setStartValue: number) => void
     maxValue: number
 }
 
 const Count = (props: CountPropsType) => {
 
     const onClickPlusButton = () => {
-        props.setCount(props.count + 1);
+        props.setStartValue(props.startValue + 1);
     }
 
     const onClickRemoveButton = () => {
-        props.setCount(0)
+        props.setStartValue(0)
     }
 
     return (
         <div>
-            { props.count <= props.maxValue ? props.count: 'MaxValue'}
-            <Button name={'+'} callback={onClickPlusButton}/>
-            <Button name={'Remove'} callback={onClickRemoveButton}/>
+            <>
+                {props.startValue <= props.maxValue ? props.startValue : 'MaxValue'}
+                <Button name={'+'} callback={onClickPlusButton}/>
+                <Button name={'Remove'} callback={onClickRemoveButton}/>
+            </>
         </div>
     );
 };

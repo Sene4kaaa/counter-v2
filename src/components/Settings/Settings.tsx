@@ -2,9 +2,9 @@ import {ChangeEvent} from "react";
 
 type SettingsPropsType = {
     maxValue: number
-    minValue: number
+    startValue: number
     setMaxValue: (value: number) => void
-    setMinValue: (value: number) => void
+    setStartValue: (value: number) => void
 }
 
 const Settings = (props: SettingsPropsType) => {
@@ -14,18 +14,22 @@ const Settings = (props: SettingsPropsType) => {
         props.setMaxValue(newMaxValue)
     }
 
-    const onChangeHandlerMinValue = (e: ChangeEvent<HTMLInputElement>) => {
-        const newMinValue = Number(e.currentTarget.value)
-        props.setMinValue(newMinValue)
+    const onChangeHandlerStartValue = (e: ChangeEvent<HTMLInputElement>) => {
+        const newStartValue = Number(e.currentTarget.value)
+        props.setStartValue(newStartValue)
     }
 
     return (
         <>
             <div>
-                MAX VALUE: <input type={"number"} onChange={onChangeHandlerMaxValue}/>
+                MAX VALUE: <input type={"number"}
+                                  value={props.maxValue}
+                                  onChange={onChangeHandlerMaxValue}/>
             </div>
             <div>
-                MIN VALUE: <input type={"number"} onChange={onChangeHandlerMinValue}/>
+                MIN VALUE: <input type={"number"}
+                                  value={props.startValue}
+                                  onChange={onChangeHandlerStartValue}/>
             </div>
         </>
     )

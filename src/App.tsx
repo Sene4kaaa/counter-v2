@@ -5,10 +5,10 @@ import Settings from "./components/Settings/Settings.tsx";
 import Button from "./components/Button/Button.tsx";
 
 function App() {
-    const [count, setCount] = useState(0)
+
     const [settings, setSettings] = useState(false)
     const [maxValue, setMaxValue] = useState<number>(0)
-    const [minValue, setMinValue] = useState<number>(0)
+    const [startValue, setStartValue] = useState<number>(0)
 
 
     const onClickSettingsOn = () => {
@@ -16,19 +16,18 @@ function App() {
     }
 
 
-
     return (
         <>
             {
                 settings ? <Settings
                         maxValue={maxValue}
-                        minValue={minValue}
+                        startValue={startValue}
                         setMaxValue={setMaxValue}
-                        setMinValue={setMinValue}
+                        setStartValue={setStartValue}
                     />
                     : <Count
-                        count={count}
-                        setCount={setCount}
+                        startValue={startValue}
+                        setStartValue={setStartValue}
                         maxValue={maxValue}
                     />
             }
