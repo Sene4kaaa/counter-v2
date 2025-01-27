@@ -1,16 +1,13 @@
 type ButtonPropsType = {
-    count: number
-    setCount: (count: number) => void;
+    name: string
+    callback: () => void
 }
 
 const Button = (props: ButtonPropsType) => {
-    const onClickHandler = () => {
-        props.setCount(props.count + 1);
-    }
 
     return (
         <div>
-            <button onClick={onClickHandler}>+</button>
+            <button onClick={props.callback}>{props.name}</button>
         </div>
     );
 };

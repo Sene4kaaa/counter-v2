@@ -6,10 +6,20 @@ type CountPropsType = {
 }
 
 const Count = (props: CountPropsType) => {
+
+    const onClickPlusButton = () => {
+        props.setCount(props.count + 1);
+    }
+
+    const onClickRemoveButton = () => {
+        props.setCount(0)
+    }
+
     return (
         <div>
             {props.count}
-            <Button count={props.count} setCount={props.setCount}/>
+            <Button name={'+'} callback={onClickPlusButton}/>
+            <Button name={'Remove'} callback={onClickRemoveButton}/>
         </div>
     );
 };
