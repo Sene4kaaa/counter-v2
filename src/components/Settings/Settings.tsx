@@ -27,9 +27,9 @@ const Settings = (props: SettingsPropsType) => {
                                   onChange={onChangeHandlerMaxValue}/>
             </div>
             <div>
-                MIN VALUE: <input type={"number"}
-                                  value={props.startValue}
-                                  onChange={onChangeHandlerStartValue}/>
+                START VALUE: <input type={"number"}
+                                    value={props.startValue}
+                                    onChange={onChangeHandlerStartValue}/>
             </div>
         </>
     )

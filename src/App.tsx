@@ -5,7 +5,7 @@ import Settings from "./components/Settings/Settings.tsx";
 import Button from "./components/Button/Button.tsx";
 
 function App() {
-
+    const [count, setCount] = useState(0);
     const [settings, setSettings] = useState(false)
     const [maxValue, setMaxValue] = useState<number>(0)
     const [startValue, setStartValue] = useState<number>(0)
@@ -21,13 +21,13 @@ function App() {
             {
                 settings ? <Settings
                         maxValue={maxValue}
-                        startValue={startValue}
+                        startValue={count}
                         setMaxValue={setMaxValue}
-                        setStartValue={setStartValue}
+                        setStartValue={setCount}
                     />
                     : <Count
-                        startValue={startValue}
-                        setStartValue={setStartValue}
+                        count={count}
+                        setCount={setCount}
                         maxValue={maxValue}
                     />
             }
