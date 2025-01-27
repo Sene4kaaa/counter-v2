@@ -26,7 +26,11 @@ function App() {
                         setMaxValue={setMaxValue}
                         setMinValue={setMinValue}
                     />
-                    : <Count count={count} setCount={setCount}/>
+                    : <Count
+                        count={count}
+                        setCount={setCount}
+                        maxValue={maxValue}
+                    />
             }
             <Button name={'Settings'} callback={onClickSettingsOn}/>
 

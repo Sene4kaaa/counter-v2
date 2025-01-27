@@ -15,8 +15,8 @@ const Settings = (props: SettingsPropsType) => {
     }
 
     const onChangeHandlerMinValue = (e: ChangeEvent<HTMLInputElement>) => {
-        const newMaxValue = Number(e.currentTarget.value)
-        props.setMaxValue(newMaxValue)
+        const newMinValue = Number(e.currentTarget.value)
+        props.setMinValue(newMinValue)
     }
 
     return (
