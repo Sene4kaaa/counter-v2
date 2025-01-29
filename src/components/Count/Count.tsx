@@ -5,7 +5,6 @@ type CountPropsType = {
     setCount: (count: number) => void;
     maxValue: number
     removeButton: () => void
-    minValue: number
 }
 
 const Count = (props: CountPropsType) => {
@@ -14,21 +13,24 @@ const Count = (props: CountPropsType) => {
         props.setCount(props.count + 1);
     }
 
-    const onClickMinusButton = () => {
-        props.setCount(props.count - 1);
-    }
-
     const onClickRemoveButton = () => {
         props.removeButton()
     }
 
     return (
-        <div>
-            {props.count <= props.maxValue && props.count >= props.minValue ? props.count :
-                <div>Incorrect Value</div>}
-            <Button name={'+'} callback={onClickPlusButton} disabled={props.count > props.maxValue}/>
-            <Button name={'-'} callback={onClickMinusButton} disabled={props.count < props.minValue}/>
-            <Button name={'Remove'} callback={onClickRemoveButton}/>
+
+        <div className={'CounterAndButton'}>
+            <h2 className={'H2'}>
+                {props.count < props.maxValue  ? props.count :
+                    <div className={'IncorrectValue'}>{props.count}</div>}</h2>
+            <div className={'IncAndReset'}>
+                <div className={'Inc'}>
+                    <Button name={'inc'} callback={onClickPlusButton} disabled={props.count >= props.maxValue}/>
+                </div>
+                <div className={'Reset'}>
+                    <Button name={'reset'} callback={onClickRemoveButton}/>
+                </div>
+            </div>
         </div>
     );
 };

@@ -9,6 +9,7 @@ const Button = (props: ButtonPropsType) => {
     return (
         <div>
             <button
+                className={'But'}
                 onClick={props.callback}
                 disabled={props.disabled}>{props.name}</button>
         </div>
