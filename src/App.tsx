@@ -8,6 +8,7 @@ function App() {
     const [count, setCount] = useState(0);
     const [maxValue, setMaxValue] = useState<number>(5)
     const [startValue, setStartValue] = useState<number>(0)
+    const[disabled, setDisabled] = useState<boolean>(true)
 
 
     const removeButton = () => {
@@ -25,6 +26,8 @@ function App() {
                     setMaxValue={setMaxValue}
                     setStartValue={setStartValue}
                     setCount={setCount}
+                    disabled={disabled}
+                    setDisabled={setDisabled}
                 />
             </div>
             <div className={'Count'}>
@@ -33,6 +36,8 @@ function App() {
                     setCount={setCount}
                     maxValue={maxValue}
                     removeButton={removeButton}
+                    disabled={disabled}
+
                 />
             </div>
 

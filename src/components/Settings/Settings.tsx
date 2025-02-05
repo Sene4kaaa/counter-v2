@@ -8,23 +8,30 @@ type SettingsPropsType = {
     setMaxValue: (value: number) => void
     setStartValue: (value: number) => void
     setCount: (count: number) => void
+    disabled: boolean
+    setDisabled: (disabled: boolean) => void
+
 }
 
 const Settings = (props: SettingsPropsType) => {
 
+
     const onChangeHandlerMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
         const newMaxValue = +e.currentTarget.value
         props.setMaxValue(newMaxValue)
+        props.setDisabled(false)
     }
 
     const onChangeHandlerStartValue = (e: ChangeEvent<HTMLInputElement>) => {
         const newStartValue = +e.currentTarget.value
         props.setStartValue(newStartValue)
+        props.setDisabled(false)
     }
 
 
     const onClickSettingsOff = () => {
         props.setCount(props.startValue)
+        props.setDisabled(true)
 
 
     }
@@ -51,7 +58,7 @@ const Settings = (props: SettingsPropsType) => {
             </div>
 
             <div className={'Button'}>
-                <Button name={"Set"} callback={onClickSettingsOff}/>
+                <Button name={"Set"} callback={onClickSettingsOff} disabled={props.disabled}/>
             </div>
         </>
     )

@@ -5,6 +5,7 @@ type CountPropsType = {
     setCount: (count: number) => void;
     maxValue: number
     removeButton: () => void
+    disabled: boolean
 }
 
 const Count = (props: CountPropsType) => {
@@ -21,7 +22,7 @@ const Count = (props: CountPropsType) => {
 
         <div className={'CounterAndButton'}>
             <h2 className={'H2'}>
-                {props.count < props.maxValue  ? props.count :
+                {props.count < props.maxValue ? props.count :
                     <div className={'IncorrectValue'}>{props.count}</div>}</h2>
             <div className={'IncAndReset'}>
                 <div className={'Inc'}>
