@@ -30,31 +30,30 @@ const Settings = (props: SettingsPropsType) => {
     }
 
     return (
-        <div>
+        <>
             <div className={'SettingsInput'}>
                 <div>
-                    <div>
-                        <span className={'Span'}>MAX VALUE:</span>
-                        <input
-                            className={'InputValue'}
-                            type={"number"}
-                            value={props.maxValue}
-                            onChange={onChangeHandlerMaxValue}/>
-                    </div>
-                    <div>
-                        <span className={'Span'}>START VALUE:</span>
-                        <input
-                            className={'InputValue'}
-                            type={"number"}
-                            value={props.startValue}
-                            onChange={onChangeHandlerStartValue}/>
-                    </div>
+                    <span className={'Span'}>MAX VALUE:</span>
+                    <input
+                        className={'InputValue'}
+                        type={"number"}
+                        value={props.maxValue}
+                        onChange={onChangeHandlerMaxValue}/>
+                </div>
+                <div>
+                    <span className={'Span'}>START VALUE:</span>
+                    <input
+                        className={'InputValue'}
+                        type={"number"}
+                        value={props.startValue}
+                        onChange={onChangeHandlerStartValue}/>
                 </div>
             </div>
+
             <div className={'Button'}>
-                <Button name={"Set"} callback={onClickSettingsOff} />
+                <Button name={"Set"} callback={onClickSettingsOff}/>
             </div>
-        </div>
+        </>
     )
         ;
 };
